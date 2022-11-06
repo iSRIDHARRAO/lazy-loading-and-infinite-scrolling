@@ -1,1 +1,1 @@
-## Lazy Loading and Infinite Scrolling React App
+## Lazy Loading and Infinite Scrolling React App.
