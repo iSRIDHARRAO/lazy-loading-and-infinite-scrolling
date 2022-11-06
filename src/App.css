@@ -1,5 +1,7 @@
 .App {
+  font-family: 'Raleway', sans-serif;
   text-align: center;
+
 }
 
 .App-logo {
@@ -28,11 +30,44 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+
+.mancard{
+  margin-top: 5vh;
+  padding: 1em;
+  
+  width: 60vw;
+  border: 2px solid gray;
+  margin-bottom: 2vh;
+  background-color: #def2f1;
+  border-radius: 3vh;
+}
+.card2{
+  display: flex;
+  justify-content: center;
+}
+.card-head{
+  font-size: 1.2em;
+  font-weight: 1000;
+  text-decoration: underline;
+}
+.head-img{
+  height: 25vh;
+}
+.img-content{
+  margin-top: 1vh;
+}
+.post-link button{
+  padding:  0.5em;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10%;
+  color: rgb(0, 0, 0);
+  font-weight: 1000;
+}
+h1{
+  color: black;
+  font-size:2em;
+}
+.bottom{
+  height: 200vh;
 }
