@@ -12,3 +12,19 @@
     padding: 0.8em;
     text-align: center;
 }
+.links{
+    position: absolute;
+    left: 15vh;
+    margin-top: 1.5em;
+}
+ .link{
+    padding: 1em;
+    text-decoration: none;
+ padding: 10px;
+    color: red;
+}
+.link:hover{
+    background-color: gray;
+    color: white;
+    border-radius: 10%;
+}

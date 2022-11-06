@@ -3,25 +3,19 @@ import DOMPurify from 'dompurify'
 import './Data.css';
 import React, { useEffect, useState } from 'react';
 
-function Data(){
+function WithoutLazy(){
     const [ data,setData ] = useState(null);
     const [loading,setloading] = useState(false);
     const [limit,setlimit] = useState(8);
     const [search,setsearch] = useState("India");
-    var url = `https://techcrunch.com/wp-json/wp/v2/search?per_page=${limit}&search=${search}`
+    var url = `https://techcrunch.com/wp-json/wp/v2/search?per_page=100&search=${search}`
     useEffect(()=>{
         if(data!=null) setData(null)
         calldata();
         console.log(search)
-        window.addEventListener('scroll',handlescroll)
+
     },[search])
-    function handlescroll(){
-        if(window.innerHeight + document.documentElement.scrollTop == window.document.documentElement.offsetHeight && !loading ){
-        console.log("End Of page")
-        setloading(true);
-        }
- 
-    }
+   
     async function calldata(){
         setloading(true);
         await axios.get(url).then((res)=>{
@@ -44,23 +38,8 @@ function Data(){
     function home(){
         window.location.reload(true);
     }
-    async function callapimore(){
-        setlimit(limit+3);
-       await axios.get(url).then((res)=>{
-            setData(res.data);
-            console.log(res.data)
-        }).catch((error)=>{
-            console.log(error)
-        })
-        setloading(false)
-    }
-
-    useEffect(()=>{
-        if(!loading) return;
-        console.log(loading)
-        callapimore();
-    },[loading])
-
+    
+    
 
     if(data){
         if(data.length!=0){
@@ -92,11 +71,6 @@ function Data(){
        
 
         </div>
-        { loading && <div className='card2'>
-                <div>
-                    <div className='mancard'>Loading...</div>
-                </div>
-        </div>}
         </>
         )
         }
@@ -120,5 +94,6 @@ function Data(){
             </div> 
         )
     }
+    
 }
-export default Data;
+export default WithoutLazy;
